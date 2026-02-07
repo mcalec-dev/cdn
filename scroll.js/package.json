@@ -1,0 +1,59 @@
+{
+  "name": "scroll.js",
+  "version": "1.0.0",
+  "description": "Lightweight utility for managing scroll locking on the document body with reference counting support",
+  "main": "scroll.umd.js",
+  "module": "scroll.js",
+  "types": "scroll.d.ts",
+  "exports": {
+    ".": {
+      "types": "./scroll.d.ts",
+      "import": "./scroll.js",
+      "require": "./scroll.umd.js",
+      "default": "./scroll.umd.js"
+    }
+  },
+  "files": [
+    "scroll.js",
+    "scroll.umd.js",
+    "scroll.min.js",
+    "scroll.umd.min.js",
+    "scroll.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:umd",
+    "build:esm": "terser scroll.js -o scroll.min.js -c -m --comments '/^!/'",
+    "build:umd": "terser scroll.umd.js -o scroll.umd.min.js -c -m --comments '/^!/'"
+  },
+  "keywords": [
+    "scroll",
+    "scroll-lock",
+    "body-scroll-lock",
+    "overflow",
+    "modal",
+    "dialog",
+    "popup",
+    "utility",
+    "frontend",
+    "browser",
+    "reference-counting"
+  ],
+  "author": "McAlec",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcalec-dev/cdn.git"
+  },
+  "homepage": "https://cdn.mcalec.dev/scroll.js/",
+  "bugs": {
+    "url": "https://github.com/mcalec-dev/cdn/issues"
+  },
+  "devDependencies": {
+    "terser": "^5.36.0"
+  },
+  "cdn": "https://mcalec.dev/scroll.js/scroll.min.js",
+  "unpkg": "scroll.umd.min.js",
+  "jsdelivr": "scroll.umd.min.js"
+}
